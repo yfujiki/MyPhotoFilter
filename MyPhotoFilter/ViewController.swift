@@ -20,6 +20,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func showActivityViewController() {
+        let image = UIImage(named: "TunnelView")
+        let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        self.presentViewController(activityViewController, animated: true, completion: nil)
+    }
 }
 
