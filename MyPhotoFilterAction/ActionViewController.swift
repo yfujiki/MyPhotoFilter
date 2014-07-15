@@ -9,6 +9,25 @@
 import UIKit
 import MobileCoreServices
 
+func log(text:String) {
+    NSLog("###### %@ ######", text)
+}
+
+extension UIImage {
+    convenience init(imageData:NSSecureCoding?) {
+        if (imageData is UIImage) {
+            let image = imageData as UIImage
+            self.init(CGImage:(imageData as UIImage).CGImage)
+        } else if (imageData is NSURL) {
+            self.init(data: (NSData(contentsOfURL: imageData as NSURL)))
+        } else if (imageData is NSData) {
+            self.init(data: imageData as NSData)
+        } else {
+            self.init()
+        }
+    }
+}
+
 class ActionViewController: UIViewController {
 
     @IBOutlet var imageView: UIImageView?
@@ -16,36 +35,31 @@ class ActionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        // Get the item[s] we're handling from the extension context.
-        
-        // For example, look for an image and place it into an image view.
-        // Replace this with something appropriate for the type[s] your extension supports.
-        var imageFound = false
         for item: AnyObject in self.extensionContext.inputItems! {
             let inputItem = item as NSExtensionItem
             for provider: AnyObject in inputItem.attachments! {
                 let itemProvider = provider as NSItemProvider
+
+                log("Registered identifiers : \(itemProvider.registeredTypeIdentifiers)")
+
                 if itemProvider.hasItemConformingToTypeIdentifier(kUTTypeImage) {
                     // This is an image. We'll load it, then place it in our image view.
-                    weak var weakImageView = self.imageView
-                    itemProvider.loadItemForTypeIdentifier(kUTTypeImage, options: nil, completionHandler: { (image, error) in
-                        if image {
-                            NSOperationQueue.mainQueue().addOperationWithBlock {
-                                if let imageView = weakImageView {
-                                    imageView.image = image as UIImage
-                                }
-                            }
-                        }
+                    itemProvider.loadItemForTypeIdentifier(kUTTypeImage, options: nil, completionHandler: { (imageData, error) in
+                        self.showImageWithSecureCoding(imageData)
                     })
-                    
-                    imageFound = true
-                    break
                 }
             }
-            
-            if (imageFound) {
-                // We only handle one image, so stop looking for more.
-                break
+        }
+    }
+
+    func showImageWithSecureCoding(imageData:NSSecureCoding?) {
+
+        let image = UIImage(imageData: imageData)
+
+        weak var weakImageView = self.imageView
+        NSOperationQueue.mainQueue().addOperationWithBlock {
+            if let imageView = weakImageView {
+                imageView.image = image
             }
         }
     }
