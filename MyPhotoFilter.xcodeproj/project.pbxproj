@@ -12,6 +12,9 @@
 		DBE3CBDA19750D2E006DD9F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBE3CBD819750D2E006DD9F5 /* Main.storyboard */; };
 		DBE3CBDC19750D2E006DD9F5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBE3CBDB19750D2E006DD9F5 /* Images.xcassets */; };
 		DBE3CBE819750D2E006DD9F5 /* MyPhotoFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE3CBE719750D2E006DD9F5 /* MyPhotoFilterTests.swift */; };
+		DBE3CBFA19751176006DD9F5 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE3CBF919751176006DD9F5 /* ActionViewController.swift */; };
+		DBE3CBFC19751176006DD9F5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBE3CBFB19751176006DD9F5 /* MainInterface.storyboard */; };
+		DBE3CBFF19751176006DD9F5 /* MyPhotoFilterAction.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DBE3CBF519751176006DD9F5 /* MyPhotoFilterAction.appex */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,7 +25,35 @@
 			remoteGlobalIDString = DBE3CBCE19750D2E006DD9F5;
 			remoteInfo = MyPhotoFilter;
 		};
+		DBE3CBFD19751176006DD9F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DBE3CBC719750D2E006DD9F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBE3CBF419751176006DD9F5;
+			remoteInfo = MyPhotoFilterAction;
+		};
+		DBE3CC0019751176006DD9F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DBE3CBC719750D2E006DD9F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBE3CBF419751176006DD9F5;
+			remoteInfo = MyPhotoFilterAction;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DBE3CC0519751176006DD9F5 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DBE3CBFF19751176006DD9F5 /* MyPhotoFilterAction.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		DBE3CBCF19750D2E006DD9F5 /* MyPhotoFilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPhotoFilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,6 +65,10 @@
 		DBE3CBE119750D2E006DD9F5 /* MyPhotoFilterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPhotoFilterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBE3CBE619750D2E006DD9F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBE3CBE719750D2E006DD9F5 /* MyPhotoFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPhotoFilterTests.swift; sourceTree = "<group>"; };
+		DBE3CBF519751176006DD9F5 /* MyPhotoFilterAction.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MyPhotoFilterAction.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBE3CBF819751176006DD9F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBE3CBF919751176006DD9F5 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		DBE3CBFB19751176006DD9F5 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +86,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DBE3CBF219751176006DD9F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -59,6 +101,7 @@
 			children = (
 				DBE3CBD119750D2E006DD9F5 /* MyPhotoFilter */,
 				DBE3CBE419750D2E006DD9F5 /* MyPhotoFilterTests */,
+				DBE3CBF619751176006DD9F5 /* MyPhotoFilterAction */,
 				DBE3CBD019750D2E006DD9F5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,6 +111,7 @@
 			children = (
 				DBE3CBCF19750D2E006DD9F5 /* MyPhotoFilter.app */,
 				DBE3CBE119750D2E006DD9F5 /* MyPhotoFilterTests.xctest */,
+				DBE3CBF519751176006DD9F5 /* MyPhotoFilterAction.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,6 +153,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		DBE3CBF619751176006DD9F5 /* MyPhotoFilterAction */ = {
+			isa = PBXGroup;
+			children = (
+				DBE3CBF919751176006DD9F5 /* ActionViewController.swift */,
+				DBE3CBFB19751176006DD9F5 /* MainInterface.storyboard */,
+				DBE3CBF719751176006DD9F5 /* Supporting Files */,
+			);
+			path = MyPhotoFilterAction;
+			sourceTree = "<group>";
+		};
+		DBE3CBF719751176006DD9F5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DBE3CBF819751176006DD9F5 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,10 +181,13 @@
 				DBE3CBCB19750D2E006DD9F5 /* Sources */,
 				DBE3CBCC19750D2E006DD9F5 /* Frameworks */,
 				DBE3CBCD19750D2E006DD9F5 /* Resources */,
+				DBE3CC0519751176006DD9F5 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DBE3CBFE19751176006DD9F5 /* PBXTargetDependency */,
+				DBE3CC0119751176006DD9F5 /* PBXTargetDependency */,
 			);
 			name = MyPhotoFilter;
 			productName = MyPhotoFilter;
@@ -147,6 +212,23 @@
 			productReference = DBE3CBE119750D2E006DD9F5 /* MyPhotoFilterTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		DBE3CBF419751176006DD9F5 /* MyPhotoFilterAction */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBE3CC0219751176006DD9F5 /* Build configuration list for PBXNativeTarget "MyPhotoFilterAction" */;
+			buildPhases = (
+				DBE3CBF119751176006DD9F5 /* Sources */,
+				DBE3CBF219751176006DD9F5 /* Frameworks */,
+				DBE3CBF319751176006DD9F5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyPhotoFilterAction;
+			productName = MyPhotoFilterAction;
+			productReference = DBE3CBF519751176006DD9F5 /* MyPhotoFilterAction.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -162,6 +244,9 @@
 					DBE3CBE019750D2E006DD9F5 = {
 						CreatedOnToolsVersion = 6.0;
 						TestTargetID = DBE3CBCE19750D2E006DD9F5;
+					};
+					DBE3CBF419751176006DD9F5 = {
+						CreatedOnToolsVersion = 6.0;
 					};
 				};
 			};
@@ -180,6 +265,7 @@
 			targets = (
 				DBE3CBCE19750D2E006DD9F5 /* MyPhotoFilter */,
 				DBE3CBE019750D2E006DD9F5 /* MyPhotoFilterTests */,
+				DBE3CBF419751176006DD9F5 /* MyPhotoFilterAction */,
 			);
 		};
 /* End PBXProject section */
@@ -198,6 +284,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBE3CBF319751176006DD9F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBE3CBFC19751176006DD9F5 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +315,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DBE3CBF119751176006DD9F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBE3CBFA19751176006DD9F5 /* ActionViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -228,6 +330,16 @@
 			isa = PBXTargetDependency;
 			target = DBE3CBCE19750D2E006DD9F5 /* MyPhotoFilter */;
 			targetProxy = DBE3CBE219750D2E006DD9F5 /* PBXContainerItemProxy */;
+		};
+		DBE3CBFE19751176006DD9F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DBE3CBF419751176006DD9F5 /* MyPhotoFilterAction */;
+			targetProxy = DBE3CBFD19751176006DD9F5 /* PBXContainerItemProxy */;
+		};
+		DBE3CC0119751176006DD9F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DBE3CBF419751176006DD9F5 /* MyPhotoFilterAction */;
+			targetProxy = DBE3CC0019751176006DD9F5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -378,6 +490,32 @@
 			};
 			name = Release;
 		};
+		DBE3CC0319751176006DD9F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MyPhotoFilterAction/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		DBE3CC0419751176006DD9F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MyPhotoFilterAction/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -403,6 +541,14 @@
 			buildConfigurations = (
 				DBE3CBEF19750D2E006DD9F5 /* Debug */,
 				DBE3CBF019750D2E006DD9F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DBE3CC0219751176006DD9F5 /* Build configuration list for PBXNativeTarget "MyPhotoFilterAction" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBE3CC0319751176006DD9F5 /* Debug */,
+				DBE3CC0419751176006DD9F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
