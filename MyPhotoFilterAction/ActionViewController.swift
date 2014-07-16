@@ -23,12 +23,14 @@ class ActionViewController: UIViewController {
 
     var image:UIImage?
     var filter:CIFilter?
+    var processingWeb:Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.segmentedControl!.selectedSegmentIndex = 0
         self.segmentedControlSelected(self.segmentedControl!)
+        self.processingWeb = false
 
         for item: AnyObject in self.extensionContext.inputItems! {
             let inputItem = item as NSExtensionItem
@@ -42,6 +44,17 @@ class ActionViewController: UIViewController {
                     itemProvider.loadItemForTypeIdentifier(kUTTypeImage, options: nil, completionHandler: { (imageData, error) in
                         self.showImageWithSecureCoding(imageData)
                     })
+                } else if (itemProvider.hasItemConformingToTypeIdentifier(kUTTypePropertyList)) {
+                    // This is a dictionary.
+                    itemProvider.loadItemForTypeIdentifier(kUTTypePropertyList, options: nil, completionHandler: { (data, error) in
+                        if (data is NSDictionary) {
+                            let dictionary = data as NSDictionary
+                            let dictionaryBody = dictionary[NSExtensionJavaScriptPreprocessingResultsKey] as NSDictionary
+                            let imageURL = NSURL(string: dictionaryBody["imageURL"] as String)
+                            self.showImageWithSecureCoding(imageURL)
+                        }
+                    })
+                    self.processingWeb = true
                 }
             }
         }
@@ -147,7 +160,16 @@ class ActionViewController: UIViewController {
 
         self.imageView!.image.saveToPhotos()
 
-        let providerItem = NSItemProvider(item: self.imageView!.image.uiimage(), typeIdentifier: kUTTypeImage)
+        var providerItem:NSItemProvider;
+        if (self.processingWeb) {
+            log("Trying to encode stuff...")
+            let imageURLString = self.imageView!.image.uiimage().encodeToBase64JPEGString()
+            let webDictionary = [NSExtensionJavaScriptFinalizeArgumentKey : ["encodedImageURL" : imageURLString]]
+
+            providerItem = NSItemProvider(item: webDictionary, typeIdentifier: kUTTypePropertyList)
+        } else {
+            providerItem = NSItemProvider(item: self.imageView!.image.uiimage(), typeIdentifier: kUTTypeImage)
+        }
         let extensionItem = NSExtensionItem()
         extensionItem.attachments = [providerItem]
         self.extensionContext.completeRequestReturningItems([extensionItem], completionHandler: nil)

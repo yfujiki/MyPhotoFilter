@@ -34,4 +34,11 @@ extension UIImage {
         let imageData = UIImagePNGRepresentation(self.uiimage())
         library.writeImageDataToSavedPhotosAlbum(imageData, metadata:nil, completionBlock: nil)
     }
+
+    func encodeToBase64JPEGString() -> (String) {
+        let imageData = UIImageJPEGRepresentation(self, 0.8)
+        let imageString = imageData.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.EncodingEndLineWithCarriageReturn)
+        log("image string : \(imageString)")
+        return "data:image/jpeg;base64," + imageString
+    }
 }

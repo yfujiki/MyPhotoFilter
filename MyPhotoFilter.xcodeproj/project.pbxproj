@@ -14,6 +14,7 @@
 		DBCEBCA21976539700B88C00 /* MyPhotoFilterSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBCEBC8C1976539700B88C00 /* MyPhotoFilterSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		DBCEBCAD197653FB00B88C00 /* UIImage+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCEBCAC197653FB00B88C00 /* UIImage+Additions.swift */; };
 		DBCEBCAF1976542F00B88C00 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCEBCAE1976542F00B88C00 /* Globals.swift */; };
+		DBD3539E1976C8A500A63BA9 /* Action.js in Resources */ = {isa = PBXBuildFile; fileRef = DBD3539D1976C8A500A63BA9 /* Action.js */; };
 		DBE3CBD519750D2E006DD9F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE3CBD419750D2E006DD9F5 /* AppDelegate.swift */; };
 		DBE3CBD719750D2E006DD9F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE3CBD619750D2E006DD9F5 /* ViewController.swift */; };
 		DBE3CBDA19750D2E006DD9F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBE3CBD819750D2E006DD9F5 /* Main.storyboard */; };
@@ -110,6 +111,7 @@
 		DBCEBC9D1976539700B88C00 /* MyPhotoFilterSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPhotoFilterSDKTests.swift; sourceTree = "<group>"; };
 		DBCEBCAC197653FB00B88C00 /* UIImage+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Additions.swift"; sourceTree = "<group>"; };
 		DBCEBCAE1976542F00B88C00 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		DBD3539D1976C8A500A63BA9 /* Action.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
 		DBE3CBCF19750D2E006DD9F5 /* MyPhotoFilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPhotoFilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBE3CBD319750D2E006DD9F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBE3CBD419750D2E006DD9F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				DBE3CBF919751176006DD9F5 /* ActionViewController.swift */,
 				DBE3CBFB19751176006DD9F5 /* MainInterface.storyboard */,
 				DBE3CBF719751176006DD9F5 /* Supporting Files */,
+				DBD3539D1976C8A500A63BA9 /* Action.js */,
 			);
 			path = MyPhotoFilterAction;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBD3539E1976C8A500A63BA9 /* Action.js in Resources */,
 				DBE3CBFC19751176006DD9F5 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -820,6 +824,7 @@
 				DBCEBCA61976539700B88C00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DBCEBCAB1976539700B88C00 /* Build configuration list for PBXNativeTarget "MyPhotoFilterSDKTests" */ = {
 			isa = XCConfigurationList;
@@ -828,6 +833,7 @@
 				DBCEBCA81976539700B88C00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DBE3CBCA19750D2E006DD9F5 /* Build configuration list for PBXProject "MyPhotoFilter" */ = {
 			isa = XCConfigurationList;
