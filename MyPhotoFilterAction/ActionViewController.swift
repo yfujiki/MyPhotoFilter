@@ -26,6 +26,12 @@ extension UIImage {
             self.init()
         }
     }
+
+    func uiimage() -> UIImage {
+        UIGraphicsBeginImageContext(self.size)
+        self.drawAtPoint(CGPointZero)
+        return UIGraphicsGetImageFromCurrentImageContext()
+    }
 }
 
 class ActionViewController: UIViewController {
@@ -162,9 +168,10 @@ class ActionViewController: UIViewController {
     }
 
     @IBAction func done() {
-        // Return any edited content to the host app.
-        // This template doesn't do anything, so we just echo the passed in items.
-        self.extensionContext.completeRequestReturningItems(self.extensionContext.inputItems, completionHandler: nil)
+        let providerItem = NSItemProvider(item: self.imageView!.image.uiimage(), typeIdentifier: kUTTypeImage)
+        let extensionItem = NSExtensionItem()
+        extensionItem.attachments = [providerItem]
+        self.extensionContext.completeRequestReturningItems([extensionItem], completionHandler: nil)
     }
 
 }
