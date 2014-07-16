@@ -8,6 +8,7 @@
 
 import UIKit
 import MobileCoreServices
+import AssetsLibrary
 
 func log(text:String) {
     NSLog("###### %@ ######", text)
@@ -31,6 +32,12 @@ extension UIImage {
         UIGraphicsBeginImageContext(self.size)
         self.drawAtPoint(CGPointZero)
         return UIGraphicsGetImageFromCurrentImageContext()
+    }
+
+    func saveToPhotos() {
+        let library = ALAssetsLibrary()
+        let imageData = UIImagePNGRepresentation(self.uiimage())
+        library.writeImageDataToSavedPhotosAlbum(imageData, metadata:nil, completionBlock: nil)
     }
 }
 
@@ -168,6 +175,9 @@ class ActionViewController: UIViewController {
     }
 
     @IBAction func done() {
+
+        self.imageView!.image.saveToPhotos()
+
         let providerItem = NSItemProvider(item: self.imageView!.image.uiimage(), typeIdentifier: kUTTypeImage)
         let extensionItem = NSExtensionItem()
         extensionItem.attachments = [providerItem]
