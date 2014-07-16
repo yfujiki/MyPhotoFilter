@@ -8,10 +8,7 @@
 
 import UIKit
 import MobileCoreServices
-
-func log(text:String) {
-    NSLog("###### %@ ######", text)
-}
+import MyPhotoFilterSDK
 
 class ViewController: UIViewController {
 

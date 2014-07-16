@@ -8,38 +8,7 @@
 
 import UIKit
 import MobileCoreServices
-import AssetsLibrary
-
-func log(text:String) {
-    NSLog("###### %@ ######", text)
-}
-
-extension UIImage {
-    convenience init(imageData:NSSecureCoding?) {
-        if (imageData is UIImage) {
-            let image = imageData as UIImage
-            self.init(CGImage:(imageData as UIImage).CGImage)
-        } else if (imageData is NSURL) {
-            self.init(data: (NSData(contentsOfURL: imageData as NSURL)))
-        } else if (imageData is NSData) {
-            self.init(data: imageData as NSData)
-        } else {
-            self.init()
-        }
-    }
-
-    func uiimage() -> UIImage {
-        UIGraphicsBeginImageContext(self.size)
-        self.drawAtPoint(CGPointZero)
-        return UIGraphicsGetImageFromCurrentImageContext()
-    }
-
-    func saveToPhotos() {
-        let library = ALAssetsLibrary()
-        let imageData = UIImagePNGRepresentation(self.uiimage())
-        library.writeImageDataToSavedPhotosAlbum(imageData, metadata:nil, completionBlock: nil)
-    }
-}
+import MyPhotoFilterSDK
 
 class ActionViewController: UIViewController {
     enum ImageFilterOptions: Int {
