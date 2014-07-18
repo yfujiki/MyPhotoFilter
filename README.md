@@ -3,6 +3,9 @@ MyPhotoFilter
 
 ## Training App For iOS8 Action Extension
 
+### Link to the accompanying slide
+http://www.slideshare.net/yfujiki/action-extension
+
 ### Requirements
 * **Xcode 6 Beta 3**
 * Experience of iOS development on Xcode
