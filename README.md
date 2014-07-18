@@ -4,7 +4,7 @@ MyPhotoFilter
 ## Training App For iOS8 Action Extension
 
 ### Requirements
-* Xcode 6 Beta 3
+* **Xcode 6 Beta 3**
 * Experience of iOS development on Xcode
 * Thorough knowledge of Swift language
 
