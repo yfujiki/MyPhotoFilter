@@ -17,7 +17,7 @@ As a training project, this project guides you through steps.
 
 And you will have a single view app with image on it. By checking out step1 ~ step 8, you will see different stage of development.
 
-- **Note : Please run on iPhone simulator although the project is configured as universal app. Implementation with  size class is apparently not working properly 😅**
+- **Note : Please run on iPhone 4S simulator although the project is configured as universal app. Implementation with  size class is apparently not working properly 😅**
 
 #### Step 1
 * ActionExtension with ActivationRule set to image count = 1
